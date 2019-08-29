@@ -1,0 +1,8 @@
+-   id: graphql-codegen-hook
+    name: graphql codegenerator
+    description: Runs graphql-codegen generating graphql types.
+    entry: index.js
+    language: node
+    always_run: true
+    pass_filenames: false
+    minimum_pre_commit_version: 0.5.0
