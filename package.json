@@ -4,7 +4,7 @@
   "description": "Graphql code generator pre-commit hook",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,19 @@
   "homepage": "https://github.com/jackton1/graphql-codegen-hook#readme",
   "dependencies": {
     "@graphql-codegen/cli": "^1.6.1",
-    "child_process": "^1.0.2",
     "graphql": "^14.5.4",
+    "npm-run": "^5.0.1",
     "yargs": "^14.0.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^1.6.1",
+    "@graphql-codegen/fragment-matcher": "1.6.1",
+    "@graphql-codegen/introspection": "1.6.1",
+    "@graphql-codegen/typescript": "1.6.1",
+    "@graphql-codegen/typescript-operations": "1.6.1",
+    "@graphql-codegen/typescript-react-apollo": "1.6.1"
+  },
+  "optionalDependencies": {
+    "@types/graphql": "^14.5.0"
   }
 }
