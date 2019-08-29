@@ -12,5 +12,5 @@ Sample `.pre-commit-config.yaml`
 -   repo: https://github.com/jackton1/graphql-codegen-hook
     rev: v0.0.1
     hooks:
-      - id: grapgql-codegen
+      - id: graphql-codegen
 ```
