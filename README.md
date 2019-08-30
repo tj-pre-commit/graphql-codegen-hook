@@ -1,5 +1,5 @@
 # graphql-codegen-hook
-Precommit hook for graphql-codegenerator  
+Precommit hook for [graphql-code-generator](https://github.com/dotansimha/graphql-code-generator) 
 
 
 ## As a pre-commit hook
