@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
   },
+  "bin": {
+    "graphql-codegen-hook": "./bin/graphql-codegen-hook.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jackton1/graphql-codegen-hook.git"
