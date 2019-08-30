@@ -13,6 +13,6 @@ const { executeCodegen, generate } = require('@graphql-codegen/cli');
 
 const configPath = path.resolve(process.cwd(), argv.config);
 
-executeCodegen({
+generate({
   configFilePath: configPath,
 });
