@@ -2,8 +2,8 @@
 
 'use strict';
 
-const npmRun = require('npm-run');
 const path = require('path');
+const process = require('process');
 const argv = require('yargs')
   .option('config', { alias: 'c', required: true })
   .option('verbose', { alias: 'v', default: false }).argv;
