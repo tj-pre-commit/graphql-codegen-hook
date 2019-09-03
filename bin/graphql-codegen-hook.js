@@ -10,14 +10,14 @@ const argv = require('yargs')
   .option('verbose', { alias: 'v', default: false }).argv;
 
 
-const { executeCodegen } = require('@graphql-codegen/cli');
+const { generate } = require('@graphql-codegen/cli');
 
 const configPath = path.resolve(process.cwd(), argv.config);
 
 const config = createConfig({ config: configPath });
 
 config.then(config => {
-  return executeCodegen(config)
+  return generate(config)
     .then(() => {
       process.exit(0);
     })
