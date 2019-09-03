@@ -16,14 +16,4 @@ const configPath = path.resolve(process.cwd(), argv.config);
 
 const config = createConfig({ config: configPath });
 
-config.then(config => {
-  return executeCodegen(config)
-    .then(() => {
-      process.exit(0);
-    })
-    .catch(error => {
-      process.exit(1);
-    });
-}).catch(error => {
-  process.exit(1);
-});
+config.then(config => executeCodegen(config));
