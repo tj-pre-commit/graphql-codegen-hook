@@ -19,3 +19,7 @@ child.stdout.on('data', function(data) {
   console.log(`Stdout: ${data}`)
 });
 
+child.stderr.on('data', function (data) {
+  console.log(data);
+  shell.exit(1);
+});
