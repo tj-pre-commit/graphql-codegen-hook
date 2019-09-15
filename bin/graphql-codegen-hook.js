@@ -2,28 +2,24 @@
 
 'use strict';
 
-const path = require('path');
-const { createConfig } = require('@graphql-codegen/cli/dist/commonjs/config');
-const process = require('process');
 const argv = require('yargs')
   .option('config', { alias: 'c', required: true })
   .option('verbose', { alias: 'v', default: false }).argv;
 
 
-const { generate } = require('@graphql-codegen/cli');
+const shell = require('shelljs');
+const basePath = shell.pwd().toString();
 
-const configPath = path.resolve(process.cwd(), argv.config);
+shell.cd(basePath);
 
-const config = createConfig({ config: configPath });
+var child = exec(`graphql-codegen --config ${argv.config}`, { async: true });
 
-config.then(config => {
-  return generate(config)
-    .then(() => {
-      process.exit(0);
-    })
-    .catch(error => {
-      process.exit(1);
-    });
-}).catch(error => {
-  process.exit(1);
+
+child.stdout.on('data', function(data) {
+  console.log(data)
+});
+
+child.stderr.on('data', function (data) {
+  console.error(data);
+  shell.exit(1);
 });

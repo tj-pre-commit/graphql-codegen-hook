@@ -20,20 +20,9 @@
   },
   "homepage": "https://github.com/jackton1/graphql-codegen-hook#readme",
   "dependencies": {
-    "@graphql-codegen/cli": "^1.6.1",
-    "graphql": "^14.5.4",
     "path": "^0.12.7",
     "process": "^0.11.10",
-    "typescript": "^3.6.2",
+    "shelljs": "^0.8.3",
     "yargs": "^14.0.0"
-  },
-  "optionalDependencies": {
-    "@types/graphql": "^14.5.0",
-    "@graphql-codegen/add": "^1.6.1",
-    "@graphql-codegen/fragment-matcher": "1.6.1",
-    "@graphql-codegen/introspection": "1.6.1",
-    "@graphql-codegen/typescript": "1.6.1",
-    "@graphql-codegen/typescript-operations": "1.6.1",
-    "@graphql-codegen/typescript-react-apollo": "1.6.1"
   }
 }
