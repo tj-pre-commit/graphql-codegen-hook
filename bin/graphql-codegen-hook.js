@@ -20,6 +20,6 @@ child.stdout.on('data', function(data) {
 });
 
 child.stderr.on('data', function (data) {
-  console.log(data);
+  console.error(data);
   shell.exit(1);
 });
