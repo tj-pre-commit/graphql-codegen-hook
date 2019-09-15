@@ -14,11 +14,6 @@ shell.cd(basePath);
 
 var child = shell.exec(`graphql-codegen --config ${argv.config}`, { async: true, verbose: argv.verbose });
 
-
-child.stdout.on('data', function(data) {
-  console.log(`Stdout: ${data}`)
-});
-
 child.stderr.on('data', function (data) {
   console.error(data);
   shell.exit(1);
