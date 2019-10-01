@@ -5,5 +5,4 @@
     language: node
     always_run: true
     pass_filenames: false
-    types: [javascript, tsx, ts]
     minimum_pre_commit_version: 0.5.0
