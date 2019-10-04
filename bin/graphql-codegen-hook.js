@@ -12,7 +12,7 @@ const basePath = shell.pwd().toString();
 
 shell.cd(basePath);
 
-var child = shell.exec(`graphql-codegen --config ${argv.config}`, { async: true, verbose: argv.verbose });
+var child = shell.exec(`npx graphql-codegen --config ${argv.config}`, { async: true, verbose: argv.verbose });
 
 child.stderr.on('data', function (data) {
   console.error(data);
