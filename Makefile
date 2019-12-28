@@ -17,8 +17,8 @@ help:
 create-new-release:
 	@echo "Increasing version..."
 	@echo "Current version $(CURRENT_VERSION)"
-	@npm version $(PART) -m "Bumped from $(CURRENT_VERSION) to version %s"
-	@$(eval NEW_VERSION=$(shell git describe "$(shell git rev-list --tags --max-count=1)" --tags))
+	@$(eval NEW_VERSION=$(shell npm version $(PART) -m "Bumped from $(CURRENT_VERSION) to version %s"))
 	@echo "Increased version to $(NEW_VERSION)"
 	@echo $(NEW_VERSION) > .version
+	@git commit -am "Updated .version to $(NEW_VERSION)."
 
