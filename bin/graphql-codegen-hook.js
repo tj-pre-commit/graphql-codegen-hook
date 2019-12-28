@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 
 'use strict';
+const minimatch = require('minimatch');
 
 const argv = require('yargs')
   .option('config', { alias: 'c', required: true, type: 'string' })
