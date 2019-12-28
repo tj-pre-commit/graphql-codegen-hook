@@ -24,7 +24,7 @@ const argv = require('yargs')
     },
   )
   .command(
-    '$0 [options] [filenames..]',
+    '$0 [filenames..]',
     'Runs graphql-codegen based on changes to ts(x)/js(x) files',
   )
   .help()
@@ -32,7 +32,7 @@ const argv = require('yargs')
 
 const { filenames = [], verbose = false } = argv;
 const fileMatches = filenames.filter(
-  minimatch.filter("*.+(tsx|jsx|js|ts)", { matchBase: true }),
+  minimatch.filter("*.+(tsx|jsx|js|ts)", { matchBase: false }),
 );
 const shouldExecute = fileMatches.length > 0;
 
@@ -43,7 +43,7 @@ if (!shouldExecute) {
   return 0;
 } else {
   if (verbose) {
-    shell.echo(`Matching files found: ${fileMatches.join(', ')}`);
+    shell.echo(`Matching files found: ${fileMatches.join(", ")}`);
   }
   const basePath = shell.pwd().toString();
 
