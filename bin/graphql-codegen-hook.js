@@ -5,7 +5,15 @@ const minimatch = require('minimatch');
 const shell = require('shelljs');
 
 const argv = require('yargs')
-  .option('config', { alias: 'c', required: true, type: 'string', description: 'Yaml config file' })
+  .option(
+    'config',
+    {
+      alias: 'c',
+      required: true,
+      type: 'string',
+      description: 'Yaml config file'
+    },
+  )
   .option(
     'verbose',
     {
@@ -22,13 +30,21 @@ const argv = require('yargs')
   .help()
   .argv;
 
-const { filenames = [] } = argv;
-const fileMatches = filenames.filter(minimatch.filter("*.+(tsx|jsx|js|ts)", { matchBase: true }));
+const { filenames = [], verbose = false } = argv;
+const fileMatches = filenames.filter(
+  minimatch.filter("*.+(tsx|jsx|js|ts)", { matchBase: true }),
+);
 const shouldExecute = fileMatches.length > 0;
 
 if (!shouldExecute) {
-  shell.exit(0);
+  if (verbose) {
+    shell.echo('No matching files found requires: js(x)|ts(x)');
+  }
+  return 0;
 } else {
+  if (verbose) {
+    shell.echo(`Matching files found: ${fileMatches.join(', ')}`);
+  }
   const basePath = shell.pwd().toString();
 
   shell.cd(basePath);
