@@ -51,7 +51,7 @@ if (!shouldExecute) {
   
   const child = shell.exec(`npx graphql-codegen --config ${argv.config}`, {
     async: true,
-    verbose: argv.verbose
+    verbose
   });
   
   child.stderr.on('data', function (data) {
