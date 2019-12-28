@@ -17,6 +17,7 @@ help:
 create-new-release:
 	@echo "Increasing version..."
 	@echo "Current version $(CURRENT_VERSION)"
-	@echo $(shell npm version $(PART) -m "Bumped from $(CURRENT_VERSION) to version %s") >> .version
-	@echo "Increased version to $(cat .version)"
+	@npm version $(PART) -m "Bumped from $(CURRENT_VERSION) to version %s"
+	@echo $(shell git describe "$(PREVIOUS_COMMIT_TAG)" --tags) > .version
+	@echo "Increased version to $(shell cat .version)"
 
