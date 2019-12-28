@@ -21,4 +21,6 @@ create-new-release:
 	@echo "Increased version to $(NEW_VERSION)"
 	@echo $(NEW_VERSION) > .version
 	@git commit -am "Updated .version to $(NEW_VERSION)."
+	@git push --tags
+	@git push
 
