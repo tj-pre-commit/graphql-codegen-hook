@@ -5,9 +5,20 @@ const minimatch = require('minimatch');
 const shell = require('shelljs');
 
 const argv = require('yargs')
-  .option('config', { alias: 'c', required: true, type: 'string' })
-  .option('verbose', { alias: 'v', default: false, type: 'boolean' })
-  .command('$0 [filenames..]', 'Changed filenames', {})
+  .option('config', { alias: 'c', required: true, type: 'string', description: 'Yaml config file' })
+  .option(
+    'verbose',
+    {
+      alias: 'v',
+      default: false,
+      type: 'boolean',
+      description: 'Turn on/off verbose output'
+    },
+  )
+  .command(
+    '$0 [options] [filenames..]',
+    'Runs graphql-codegen based on changes to ts(x)/js(x) files',
+  )
   .help()
   .argv;
 
