@@ -20,4 +20,3 @@ generates:
       - typescript-react-apollo
     config:
       withHooks: true
-      noComponents: true
