@@ -25,14 +25,14 @@ const argv = require('yargs')
   )
   .command(
     '$0 [filenames..]',
-    'Runs graphql-codegen based on changes to ts/js(x) files',
+    'Runs graphql-codegen based on changes to .(ts/js(x)|graphql) files',
   )
   .help()
   .argv;
 
 const { filenames = [], verbose = false } = argv;
 const fileMatches = filenames.filter(
-  minimatch.filter("*.+(tsx|jsx|js|ts)", { matchBase: false }),
+  minimatch.filter("*.+(tsx|jsx|js|ts|graphql)", { matchBase: true }),
 );
 const shouldExecute = fileMatches.length > 0;
 

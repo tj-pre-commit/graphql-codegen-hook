@@ -1,12 +1,23 @@
 overwrite: true
-schema: "http://localhost:8000/graphql-codegen/"
-documents: "src/**/*.graphql"
+schema:
+  - "
+      type IsUpdatingType {
+        isUpdating: Boolean!
+      }
+
+      type Query {
+        isUpdating: Boolean!
+      }
+    "
+documents: "src/**/*.ts"
 generates:
-  src/generated/graphql.ts:
+  src/generated/graphql.tsx:
     plugins:
-      - "typescript"
-      - "typescript-operations"
-      - "typescript-react-apollo"
-  ./graphql.schema.json:
-    plugins:
-      - "introspection"
+      - add: /* eslint-disable */
+      - add: /* tslint:disable */
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+      noComponents: true
