@@ -3,7 +3,4 @@
     description: Runs graphql-codegen generating graphql types.
     entry: graphql-codegen-hook
     language: node
-    always_run: true
-    types: [file, javascript]
-    files: \.(tsx|jsx|js|tsx)$
     minimum_pre_commit_version: 0.5.0
