@@ -4,7 +4,7 @@
   "description": "Graphql code generator pre-commit hook",
   "main": "./bin/graphql-codegen-hook.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "cd tests && graphql-codegen-hook -c codegen.yml src/query.ts --verbose"
   },
   "bin": {
     "graphql-codegen-hook": "./bin/graphql-codegen-hook.js"
