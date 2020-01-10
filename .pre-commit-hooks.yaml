@@ -4,6 +4,6 @@
     entry: graphql-codegen-hook
     language: node
     always_run: true
-    pass_filenames: false
     types: [file, javascript]
+    files: \.(tsx|jsx|js|tsx)$
     minimum_pre_commit_version: 0.5.0
