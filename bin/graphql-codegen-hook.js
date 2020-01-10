@@ -38,12 +38,12 @@ const shouldExecute = fileMatches.length > 0;
 
 if (!shouldExecute) {
   if (verbose) {
-    shell.echo('No matching files found requires: js(x)|ts(x)');
+    console.log('No matching files found requires: js(x)|ts(x)');
   }
   return 0;
 } else {
   if (verbose) {
-    shell.echo(`Matching files found: ${fileMatches.join(", ")}`);
+    console.log(`Matching files found: ${fileMatches.join(", ")}`);
   }
   const basePath = shell.pwd().toString();
 
