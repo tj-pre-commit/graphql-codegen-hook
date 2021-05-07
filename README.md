@@ -1,8 +1,8 @@
+![Node.js CI](https://github.com/tj-pre-commit/graphql-codegen-hook/workflows/Node.js%20CI/badge.svg?event=push)
+
 # graphql-codegen-hook
 [pre-commit](https://pre-commit.com) hook for [graphql-code-generator](https://github.com/dotansimha/graphql-code-generator) 
 
-
-![Node.js CI](https://github.com/tj-pre-commit/graphql-codegen-hook/workflows/Node.js%20CI/badge.svg?event=push)
 
 ## As a pre-commit hook
 
