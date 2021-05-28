@@ -1,5 +1,7 @@
 name: automerge
 on:
+  pull_request_review:
+    types: [submitted]
   check_suite:
     types:
       - rerequested
