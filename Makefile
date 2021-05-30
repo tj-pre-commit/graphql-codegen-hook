@@ -14,6 +14,10 @@ help:
 
 .PHONY: help
 
+
+test:  # Run npm test.
+	npm run test
+
 create-new-release:
 	@echo "Increasing version..."
 	@echo "Current version $(CURRENT_VERSION)"
