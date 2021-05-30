@@ -12,21 +12,21 @@ export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string,
-  String: string,
-  Boolean: boolean,
-  Int: number,
-  Float: number,
+  ID: string;
+  String: string;
+  Boolean: boolean;
+  Int: number;
+  Float: number;
 };
 
 export type IsUpdatingType = {
-   __typename?: 'IsUpdatingType',
-  isUpdating: Scalars['Boolean'],
+   __typename?: 'IsUpdatingType';
+  isUpdating: Scalars['Boolean'];
 };
 
 export type Query = {
-   __typename?: 'Query',
-  isUpdating: Scalars['Boolean'],
+   __typename?: 'Query';
+  isUpdating: Scalars['Boolean'];
 };
 
 export type IsUpdatingQueryVariables = {};
@@ -49,7 +49,7 @@ export type IsUpdatingComponentProps = Omit<ApolloReactComponents.QueryComponent
       <ApolloReactComponents.Query<IsUpdatingQuery, IsUpdatingQueryVariables> query={IsUpdatingDocument} {...props} />
     );
     
-export type IsUpdatingProps<TChildProps = {}> = ApolloReactHoc.DataProps<IsUpdatingQuery, IsUpdatingQueryVariables> | TChildProps;
+export type IsUpdatingProps<TChildProps = {}> = ApolloReactHoc.DataProps<IsUpdatingQuery, IsUpdatingQueryVariables> & TChildProps;
 export function withIsUpdating<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   IsUpdatingQuery,
