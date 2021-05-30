@@ -4,5 +4,5 @@
     entry: graphql-codegen-hook
     language: node
     types: [file, javascript]
-    files: \.(js|jsx|ts|tsx)$
+    files: \.(js|graphql|jsx|ts|tsx)$
     minimum_pre_commit_version: 0.5.0
