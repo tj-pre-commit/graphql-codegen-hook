@@ -11,7 +11,7 @@ See [pre-commit](https://github.com/pre-commit/pre-commit) for instructions
 Sample `.pre-commit-config.yaml`
 
 ```yaml
--   repo: https://github.com/jackton1/graphql-codegen-hook
+-   repo: https://github.com/tj-pre-commit/graphql-codegen-hook
     rev: v1.0.0
     hooks:
       - id: graphql-codegen-hook
