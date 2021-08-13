@@ -7,7 +7,6 @@ import * as ApolloReactComponents from '@apollo/react-components';
 import * as ApolloReactHoc from '@apollo/react-hoc';
 import * as ApolloReactHooks from '@apollo/react-hooks';
 export type Maybe<T> = T | null;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 
@@ -30,7 +29,7 @@ export type Query = {
   isUpdating: Scalars['Boolean'];
 };
 
-export type IsUpdatingQueryVariables = Exact<{ [key: string]: never; }>;
+export type IsUpdatingQueryVariables = {};
 
 
 export type IsUpdatingQuery = (
