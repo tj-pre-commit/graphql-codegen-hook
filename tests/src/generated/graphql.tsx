@@ -7,6 +7,7 @@ import * as ApolloReactComponents from '@apollo/react-components';
 import * as ApolloReactHoc from '@apollo/react-hoc';
 import * as ApolloReactHooks from '@apollo/react-hooks';
 export type Maybe<T> = T | null;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 
@@ -20,16 +21,16 @@ export type Scalars = {
 };
 
 export type IsUpdatingType = {
-   __typename?: 'IsUpdatingType';
+  __typename?: 'IsUpdatingType';
   isUpdating: Scalars['Boolean'];
 };
 
 export type Query = {
-   __typename?: 'Query';
+  __typename?: 'Query';
   isUpdating: Scalars['Boolean'];
 };
 
-export type IsUpdatingQueryVariables = {};
+export type IsUpdatingQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type IsUpdatingQuery = (
@@ -49,13 +50,15 @@ export type IsUpdatingComponentProps = Omit<ApolloReactComponents.QueryComponent
       <ApolloReactComponents.Query<IsUpdatingQuery, IsUpdatingQueryVariables> query={IsUpdatingDocument} {...props} />
     );
     
-export type IsUpdatingProps<TChildProps = {}> = ApolloReactHoc.DataProps<IsUpdatingQuery, IsUpdatingQueryVariables> & TChildProps;
-export function withIsUpdating<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+export type IsUpdatingProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<IsUpdatingQuery, IsUpdatingQueryVariables>
+    } & TChildProps;
+export function withIsUpdating<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
   IsUpdatingQuery,
   IsUpdatingQueryVariables,
-  IsUpdatingProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, IsUpdatingQuery, IsUpdatingQueryVariables, IsUpdatingProps<TChildProps>>(IsUpdatingDocument, {
+  IsUpdatingProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, IsUpdatingQuery, IsUpdatingQueryVariables, IsUpdatingProps<TChildProps, TDataName>>(IsUpdatingDocument, {
       alias: 'isUpdating',
       ...operationOptions
     });
@@ -65,7 +68,7 @@ export function withIsUpdating<TProps, TChildProps = {}>(operationOptions?: Apol
  * __useIsUpdatingQuery__
  *
  * To run a query within a React component, call `useIsUpdatingQuery` and pass it any options that fit your needs.
- * When your component renders, `useIsUpdatingQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * When your component renders, `useIsUpdatingQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
