@@ -21,7 +21,7 @@
   "homepage": "https://github.com/jackton1/graphql-codegen-hook#readme",
   "devDependencies": {
     "@graphql-codegen/add": "1.17.7",
-    "@graphql-codegen/cli": "2.13.8",
+    "@graphql-codegen/cli": "2.13.9",
     "@graphql-codegen/typescript": "1.23.0",
     "@graphql-codegen/typescript-operations": "1.18.4",
     "@graphql-codegen/typescript-react-apollo": "1.17.7",
