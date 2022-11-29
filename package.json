@@ -45,6 +45,6 @@
     "process": "^0.11.10",
     "shelljs": "^0.8.5",
     "yargs": "^17.6.1",
-    "minimatch": "^5.1.0"
+    "minimatch": "^5.1.1"
   }
 }
